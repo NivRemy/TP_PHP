@@ -1,8 +1,8 @@
 <?php
-function getGame($id) {
+function getProducts() {
 	try {
 
-		$go_bdd = new PDO('mysql:host=localhost;dbname=test_go;charset=utf8', 'root', '');
+		$go_bdd = new PDO('mysql:host=localhost;dbname=products_api;charset=utf8', 'root', '');
 
 	}
 	catch (Exception $e) {
@@ -12,9 +12,9 @@ function getGame($id) {
 	}
 
 
-	$response = $go_bdd->query('SELECT * FROM games  WHERE id = ' . $id);
+	$response = $go_bdd->query('SELECT * FROM products');
 
-	$gameData = $response->fetch();
+	$products = $response->fetchall(PDO::FETCH_ASSOC);
 
-	return $gameData;
+	return $products;
 }

@@ -3,20 +3,26 @@
 $title = 'Hello World';
 
 ob_start();  // Début du content
-
+echo '<h1>Liste des produits</h1>';
+foreach ($products as $product) {
+	
 ?>
 
-<p>Game : <?= $player1 . 'vs' . $player2; ?></p>
-
-</br>
-
-<p><?= $json; ?></p>
+<table>
+	<tr>
+		<th>Nom</th>
+		<th>Description</th>
+		<th>Prix</th>
+	</tr>
+	<tr>
+		<td><?= $product['name']; ?></td>
+		<td><?= $product['description']; ?></td>
+		<td><?= $product['price']; ?></td>
+	</tr>
+</table>
 
 <?php
-
-$game_data = json_decode($json);
-
-print_r($game_data);
+}
 
 $content = ob_get_clean();
 

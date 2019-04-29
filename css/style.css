@@ -1,0 +1,15 @@
+h1 {
+	color: red;
+}
+
+table {
+	margin-top: 20px;
+}
+
+table,tr,td,th {
+	border:solid 1px black;
+}
+
+td,th {
+	width:300px;
+}
